@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -39,8 +40,6 @@ body{
   color:var(--text);
   overflow-x:hidden;
 }
-
-/* BACKGROUND */
 
 body::before,
 body::after{
@@ -104,7 +103,7 @@ nav{
   color:#b8bacb;
   text-decoration:none;
   font-size:14px;
-  transition:color .25s ease;
+  transition:.25s;
 }
 
 .nav-links a:hover{
@@ -172,7 +171,7 @@ h1{
   font-weight:bold;
   background:var(--gradient);
   cursor:pointer;
-  transition:transform .25s ease,box-shadow .25s ease;
+  transition:.25s;
 }
 
 .btn:hover{
@@ -242,13 +241,13 @@ h1{
 }
 
 @keyframes spin{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
 }
 
 /* SECTIONS */
@@ -284,7 +283,7 @@ section{
   border-radius:20px;
   background:linear-gradient(145deg,#121427,#0b0d18);
   border:1px solid var(--border);
-  transition:transform .3s ease,border-color .3s ease;
+  transition:.3s;
 }
 
 .card:hover{
@@ -375,7 +374,7 @@ section{
   background:
     radial-gradient(circle at 20% 20%,rgba(168,85,247,.50),transparent 35%),
     linear-gradient(135deg,#19132d,#0d1d2b);
-  transition:transform .3s ease;
+  transition:.3s;
 }
 
 .work:hover{
@@ -509,13 +508,6 @@ footer{
   font-size:13px;
 }
 
-/* NO BLINK ANIMATION */
-
-.reveal{
-  opacity:1;
-  transform:none;
-}
-
 /* MOBILE */
 
 @media(max-width:800px){
@@ -596,13 +588,10 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .buttons .btn{
-    width:100%;
-    text-align:center;
-  }
-
+  .buttons .btn,
   .contact-buttons .btn{
     width:100%;
+    text-align:center;
   }
 }
 </style>
@@ -671,7 +660,6 @@ footer{
 
   </div>
 
-
   <div class="hero-art">
 
     <div class="orbit"></div>
@@ -698,7 +686,6 @@ footer{
     </p>
 
   </div>
-
 
   <div class="grid">
 
@@ -769,17 +756,13 @@ footer{
 
   </div>
 
-
   <div class="country-area">
 
     <label class="country-label" for="country">
       Country / Currency
     </label>
 
-    <select
-      class="country-select"
-      id="country"
-      onchange="changeCountry()">
+    <select class="country-select" id="country">
 
       <option value="india">🇮🇳 India — INR ₹</option>
       <option value="usa">🇺🇸 USA — USD $</option>
@@ -798,7 +781,6 @@ footer{
 
 
   <div class="grid">
-
 
     <!-- LOGO -->
 
@@ -822,10 +804,7 @@ footer{
         Professional logo for your brand.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Order Now →
       </button>
 
@@ -854,10 +833,7 @@ footer{
         Creative social media post design.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Order Now →
       </button>
 
@@ -886,10 +862,7 @@ footer{
         Promotional poster or advertisement.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Order Now →
       </button>
 
@@ -918,10 +891,7 @@ footer{
         Attention-grabbing video thumbnail.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Order Now →
       </button>
 
@@ -950,10 +920,7 @@ footer{
         Professional business card design.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Order Now →
       </button>
 
@@ -982,10 +949,7 @@ footer{
         Custom designs based on your requirements.
       </p>
 
-      <button
-        class="btn"
-        type="button"
-        onclick="orderService(this)">
+      <button class="btn" type="button" onclick="orderService(this)">
         Get Quote →
       </button>
 
@@ -1009,7 +973,6 @@ footer{
     </p>
 
   </div>
-
 
   <div class="grid">
 
@@ -1056,7 +1019,6 @@ footer{
 
   </div>
 
-
   <div class="stats">
 
     <div class="stat">
@@ -1098,7 +1060,6 @@ footer{
 
   </div>
 
-
   <div class="policy-grid">
 
     <div class="policy-card">
@@ -1126,7 +1087,6 @@ footer{
       </p>
 
     </div>
-
 
     <div class="policy-card">
 
@@ -1169,7 +1129,6 @@ footer{
 
   </div>
 
-
   <div class="faq">
 
     <details>
@@ -1181,14 +1140,12 @@ footer{
       </p>
     </details>
 
-
     <details>
       <summary>Can I request a custom design?</summary>
       <p>
         Yes. Choose Custom Graphic Design and send your requirements.
       </p>
     </details>
-
 
     <details>
       <summary>Do you work with international clients?</summary>
@@ -1198,14 +1155,12 @@ footer{
       </p>
     </details>
 
-
     <details>
       <summary>Can I change my country?</summary>
       <p>
         Yes. Use the country selector in the Pricing section.
       </p>
     </details>
-
 
     <details>
       <summary>How many revisions are included?</summary>
@@ -1235,9 +1190,38 @@ footer{
       for your brand.
     </p>
 
-
     <div class="contact-buttons">
 
       <a
         class="btn"
-        href="https://instagr
+        href="https://wa.me/916209442215"
+        target="_blank"
+        rel="noopener">
+        💬 WhatsApp Us
+      </a>
+
+      <a
+        class="btn btn-outline"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener">
+        📸 Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+  © 2026 GRAFYX Designs. All rights reserved.
+</footer>
+
+
+<script>
+
+/* ======================
