@@ -1,376 +1,1205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GRAFYX Designs</title>
+<title>GRAFYX Designs | Creative Graphic Design Studio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta name="description" content="GRAFYX Designs creates modern logos, social media graphics, posters, thumbnails and custom graphic designs.">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #080912;
-      color: white;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    nav {
-      padding: 20px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #252738;
-      position: sticky;
-      top: 0;
-      background: #080912;
-      z-index: 10;
-    }
+:root{
+  --bg:#070811;
+  --bg2:#0b0d18;
+  --card:#101221;
+  --card2:#15182a;
+  --text:#ffffff;
+  --muted:#a5a8bd;
+  --border:#282c43;
+  --purple:#a855f7;
+  --blue:#38bdf8;
+  --gradient:linear-gradient(135deg,#a855f7,#38bdf8);
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    .logo span,
-    .gradient {
-      background: linear-gradient(90deg, #a855f7, #38bdf8);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+/* BACKGROUND GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  top:-180px;
+  left:-180px;
+  background:rgba(168,85,247,.14);
+  filter:blur(110px);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
 
-    nav a {
-      color: #aaaabd;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+body::after{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  right:-200px;
+  bottom:-200px;
+  background:rgba(56,189,248,.11);
+  filter:blur(110px);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
 
-    .hero {
-      min-height: 85vh;
-      padding: 80px 7%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(7,8,17,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
 
-    .tag {
-      color: #c9c2ff;
-      border: 1px solid #393b50;
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: 12px;
-    }
+.logo{
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:2px;
+}
 
-    h1 {
-      font-size: clamp(50px, 7vw, 80px);
-      line-height: 1;
-      margin: 25px 0;
-    }
+.gradient{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-    .hero p {
-      color: #a9aabd;
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 25px;
-    }
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      background: linear-gradient(90deg, #a855f7, #38bdf8);
-    }
+.nav-links a{
+  color:#b8bacb;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
 
-    .graphic {
-      height: 330px;
-      border-radius: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background:
-        radial-gradient(circle, #a855f7, #15172a 45%, #080912 75%);
-      box-shadow: 0 0 70px #a855f733;
-    }
+.nav-links a:hover{
+  color:#fff;
+}
 
-    .gx {
-      font-size: 110px;
-      font-weight: bold;
-      text-shadow: 0 0 30px #38bdf8;
-    }
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  color:#fff;
+  font-size:26px;
+  cursor:pointer;
+}
 
-    section {
-      padding: 80px 7%;
-    }
+/* HERO */
+.hero{
+  min-height:90vh;
+  padding:90px 7%;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
 
-    .title {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+.badge{
+  display:inline-block;
+  padding:9px 15px;
+  border:1px solid #363a53;
+  border-radius:30px;
+  color:#d7d2ff;
+  font-size:11px;
+  letter-spacing:1.5px;
+  background:rgba(255,255,255,.025);
+}
 
-    .subtitle {
-      color: #999bad;
-      margin-bottom: 35px;
-    }
+h1{
+  font-size:clamp(48px,7vw,82px);
+  line-height:.98;
+  letter-spacing:-3px;
+  margin:25px 0;
+}
 
-    .services,
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.hero-text{
+  max-width:600px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:30px;
+}
 
-    .card {
-      padding: 25px;
-      border-radius: 18px;
-      background: #0e101c;
-      border: 1px solid #292c3d;
-    }
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+  background:var(--gradient);
+  box-shadow:0 10px 35px rgba(120,80,255,.18);
+  transition:.3s;
+}
 
-    .card p {
-      color: #999bad;
-      font-size: 14px;
-    }
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 45px rgba(120,80,255,.35);
+}
 
-    .work {
-      height: 200px;
-      padding: 20px;
-      display: flex;
-      align-items: end;
-      border-radius: 18px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #241335, #102438);
-      border: 1px solid #303348;
-    }
+.btn-outline{
+  background:transparent;
+  border:1px solid #383c54;
+}
 
-    .contact {
-      text-align: center;
-      padding: 60px 20px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, #171129, #0c1d29);
-      border: 1px solid #34364c;
-    }
+/* HERO ART */
+.hero-art{
+  height:390px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
 
-    .contact p {
-      color: #aaaabd;
-      margin: 15px auto 25px;
-      max-width: 600px;
-    }
+.orbit{
+  position:absolute;
+  width:310px;
+  height:310px;
+  border:1px solid rgba(168,85,247,.35);
+  border-radius:50%;
+  animation:spin 12s linear infinite;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #77798b;
-      border-top: 1px solid #222536;
-    }
+.orbit::before{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  background:#38bdf8;
+  border-radius:50%;
+  top:12px;
+  left:50%;
+  box-shadow:0 0 25px #38bdf8;
+}
 
-    @media (max-width: 700px) {
-      nav div:last-child {
-        display: none;
-      }
+.logo-box{
+  width:230px;
+  height:230px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:45px;
+  background:
+    radial-gradient(circle at 30% 20%,#a855f7,transparent 45%),
+    linear-gradient(145deg,#17152d,#0b1725);
+  border:1px solid #3b3e58;
+  box-shadow:0 0 80px rgba(168,85,247,.22);
+  animation:float 4s ease-in-out infinite;
+}
 
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 60px;
-      }
+.gx{
+  font-size:85px;
+  font-weight:900;
+  letter-spacing:-8px;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-      .services,
-      .portfolio {
-        grid-template-columns: 1fr;
-      }
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
 
-      .graphic {
-        height: 260px;
-      }
-    }
-  </style>
+@keyframes float{
+  50%{transform:translateY(-12px);}
+}
+
+/* SECTIONS */
+section{
+  padding:90px 7%;
+}
+
+.section-head{
+  margin-bottom:40px;
+}
+
+.title{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:28px;
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(18,20,39,.95),rgba(10,11,23,.95));
+  border:1px solid var(--border);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#4b506d;
+  box-shadow:0 20px 50px rgba(0,0,0,.28);
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* PRICING */
+.price-card{
+  display:flex;
+  flex-direction:column;
+  min-height:270px;
+}
+
+.price{
+  font-size:30px;
+  font-weight:800;
+  margin:18px 0;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.price-card .btn{
+  margin-top:auto;
+  text-align:center;
+  padding:11px;
+}
+
+.country-select{
+  width:100%;
+  max-width:380px;
+  padding:13px 15px;
+  margin-bottom:30px;
+  border-radius:12px;
+  border:1px solid #30344c;
+  background:#101221;
+  color:#fff;
+  font-size:15px;
+  outline:none;
+}
+
+/* PORTFOLIO */
+.work{
+  height:230px;
+  border-radius:20px;
+  padding:25px;
+  display:flex;
+  align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:
+    radial-gradient(circle at 20% 20%,rgba(168,85,247,.55),transparent 35%),
+    linear-gradient(135deg,#19132d,#0d1d2b);
+  transition:.35s;
+}
+
+.work:hover{
+  transform:scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.work span{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* WHY */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.stat{
+  padding:28px 20px;
+  text-align:center;
+  background:#0d0f1c;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.stat strong{
+  display:block;
+  font-size:30px;
+  margin-bottom:8px;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* FAQ */
+.faq{
+  max-width:850px;
+}
+
+details{
+  background:#0e101d;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 20px;
+  margin-bottom:12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+
+details p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:15px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  padding:70px 25px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(168,85,247,.25),transparent 45%),
+    linear-gradient(135deg,#121127,#0b1a27);
+  border:1px solid #35384e;
+}
+
+.contact p{
+  max-width:600px;
+  margin:15px auto 28px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
+footer{
+  padding:30px 7%;
+  border-top:1px solid #202334;
+  color:#777b90;
+  text-align:center;
+  font-size:13px;
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:5%;
+    right:5%;
+    padding:20px;
+    flex-direction:column;
+    align-items:flex-start;
+    background:#0d0f1d;
+    border:1px solid var(--border);
+    border-radius:15px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:65px;
+  }
+
+  .hero-art{
+    height:300px;
+  }
+
+  .logo-box{
+    width:190px;
+    height:190px;
+  }
+
+  .orbit{
+    width:250px;
+    height:250px;
+  }
+
+  .gx{
+    font-size:70px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .title{
+    font-size:34px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+}
+
+@media(max-width:450px){
+
+  h1{
+    font-size:48px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">
-      GRAFYX <span>DESIGNS</span>
-    </div>
+<!-- NAVBAR -->
+<nav>
 
-    <div>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  <div class="logo">
+    GRAFYX <span class="gradient">DESIGNS</span>
+  </div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">Why Us</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</nav>
 
 
-  <!-- HOME -->
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
 
-    <div>
+  <div class="reveal">
 
-      <span class="tag">
-        CREATIVE GRAPHIC DESIGN STUDIO
-      </span>
+    <span class="badge">
+      CREATIVE GRAPHIC DESIGN STUDIO
+    </span>
 
-      <h1>
-        We Create.<br>
-        <span class="gradient">You Stand Out.</span>
-      </h1>
+    <h1>
+      We Create.<br>
+      <span class="gradient">You Stand Out.</span>
+    </h1>
 
-      <p>
-        Professional graphic design for brands,
-        creators and businesses.
-      </p>
+    <p class="hero-text">
+      Modern, creative and professional graphic designs
+      for brands, creators and businesses.
+    </p>
 
-      <a
-        class="btn"
-        href="https://instagram.com/grafyx.designs"
-        target="_blank">
-        Contact Us on Instagram →
+    <div class="buttons">
+
+      <a href="#portfolio" class="btn">
+        View Portfolio →
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        Get a Quote
       </a>
 
     </div>
 
-    <div class="graphic">
+  </div>
+
+
+  <div class="hero-art reveal">
+
+    <div class="orbit"></div>
+
+    <div class="logo-box">
       <div class="gx">GX</div>
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SERVICES -->
-  <section id="services">
+<!-- SERVICES -->
+<section id="services">
 
-    <h2 class="title">Our Services</h2>
+  <div class="section-head reveal">
 
-    <p class="subtitle">
-      Creative designs for your brand.
-    </p>
-
-    <div class="services">
-
-      <div class="card">
-        <h3>✦ Logo Design</h3>
-        <p>
-          Professional and memorable logos
-          for your brand.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>◈ Social Media</h3>
-        <p>
-          Instagram posts, reels covers
-          and social media creatives.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>▣ Posters & Ads</h3>
-        <p>
-          Attractive posters and
-          promotional advertisements.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>▤ Business Cards</h3>
-        <p>
-          Modern professional business
-          card designs.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>▶ Thumbnails</h3>
-        <p>
-          Eye-catching YouTube and
-          video thumbnails.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>✎ Custom Designs</h3>
-        <p>
-          Tell us your idea and
-          we'll create it.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-
-    <h2 class="title">Portfolio</h2>
+    <h2 class="title">
+      Our Services
+    </h2>
 
     <p class="subtitle">
-      Our creative design work.
+      Everything you need to build a strong visual identity.
     </p>
 
-    <div class="portfolio">
+  </div>
 
-      <div class="work">BRAND IDENTITY</div>
 
-      <div class="work">SOCIAL MEDIA</div>
+  <div class="grid">
 
-      <div class="work">POSTER DESIGN</div>
-
-      <div class="work">PRODUCT ADS</div>
-
-      <div class="work">TYPOGRAPHY</div>
-
-      <div class="work">FASHION DESIGN</div>
-
+    <div class="card reveal">
+      <div class="icon">🎨</div>
+      <h3>Logo Design</h3>
+      <p>
+        Professional and memorable logos
+        designed for your brand.
+      </p>
     </div>
 
-  </section>
+
+    <div class="card reveal">
+      <div class="icon">📱</div>
+      <h3>Social Media Design</h3>
+      <p>
+        Modern posts, stories and creative
+        social media graphics.
+      </p>
+    </div>
 
 
-  <!-- CONTACT -->
-  <section id="contact">
+    <div class="card reveal">
+      <div class="icon">📢</div>
+      <h3>Poster / Advertisement</h3>
+      <p>
+        Eye-catching promotional posters
+        and advertisements.
+      </p>
+    </div>
 
-    <div class="contact">
 
-      <h2 class="title">
-        Have a Design in Mind?
-      </h2>
+    <div class="card reveal">
+      <div class="icon">▶️</div>
+      <h3>YouTube Thumbnail</h3>
+      <p>
+        High-impact thumbnails designed
+        to grab attention.
+      </p>
+    </div>
+
+
+    <div class="card reveal">
+      <div class="icon">💳</div>
+      <h3>Business Card</h3>
+      <p>
+        Clean and professional business
+        card designs.
+      </p>
+    </div>
+
+
+    <div class="card reveal">
+      <div class="icon">✨</div>
+      <h3>Custom Graphic Design</h3>
+      <p>
+        Tell us your idea and we'll turn
+        it into a creative design.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing">
+
+  <div class="section-head reveal">
+
+    <h2 class="title">
+      Pricing
+    </h2>
+
+    <p class="subtitle">
+      Choose your country to see your local pricing.
+    </p>
+
+  </div>
+
+
+  <select
+    class="country-select"
+    id="country"
+    onchange="changeCountry()">
+
+    <option value="india">
+      🇮🇳 India — INR ₹
+    </option>
+
+    <option value="usa">
+      🇺🇸 USA — USD $
+    </option>
+
+    <option value="uk">
+      🇬🇧 UK — GBP £
+    </option>
+
+    <option value="europe">
+      🇪🇺 Europe — EUR €
+    </option>
+
+    <option value="uae">
+      🇦🇪 UAE — AED
+    </option>
+
+  </select>
+
+
+  <div class="grid">
+
+
+    <!-- LOGO -->
+    <div class="card price-card reveal">
+
+      <h3>🎨 Logo Design</h3>
+
+      <div
+        class="price"
+        data-india="₹799"
+        data-usa="$25"
+        data-uk="£20"
+        data-europe="€23"
+        data-uae="AED 90">
+
+        ₹799
+
+      </div>
 
       <p>
-        Send us your requirements and
-        let's create something amazing.
+        Professional logo for your brand.
       </p>
+
+      <a href="#contact" class="btn">
+        Order Now
+      </a>
+
+    </div>
+
+
+    <!-- SOCIAL -->
+    <div class="card price-card reveal">
+
+      <h3>📱 Social Media Post</h3>
+
+      <div
+        class="price"
+        data-india="₹249"
+        data-usa="$12"
+        data-uk="£10"
+        data-europe="€11"
+        data-uae="AED 45">
+
+        ₹249
+
+      </div>
+
+      <p>
+        Creative social media post design.
+      </p>
+
+      <a href="#contact" class="btn">
+        Order Now
+      </a>
+
+    </div>
+
+
+    <!-- POSTER -->
+    <div class="card price-card reveal">
+
+      <h3>📢 Poster / Advertisement</h3>
+
+      <div
+        class="price"
+        data-india="₹399"
+        data-usa="$15"
+        data-uk="£12"
+        data-europe="€14"
+        data-uae="AED 55">
+
+        ₹399
+
+      </div>
+
+      <p>
+        Promotional poster or advertisement.
+      </p>
+
+      <a href="#contact" class="btn">
+        Order Now
+      </a>
+
+    </div>
+
+
+    <!-- THUMBNAIL -->
+    <div class="card price-card reveal">
+
+      <h3>▶️ YouTube Thumbnail</h3>
+
+      <div
+        class="price"
+        data-india="₹199"
+        data-usa="$11"
+        data-uk="£9"
+        data-europe="€10"
+        data-uae="AED 40">
+
+        ₹199
+
+      </div>
+
+      <p>
+        Attention-grabbing video thumbnail.
+      </p>
+
+      <a href="#contact" class="btn">
+        Order Now
+      </a>
+
+    </div>
+
+
+    <!-- BUSINESS CARD -->
+    <div class="card price-card reveal">
+
+      <h3>💳 Business Card</h3>
+
+      <div
+        class="price"
+        data-india="₹299"
+        data-usa="$12"
+        data-uk="£10"
+        data-europe="€11"
+        data-uae="AED 45">
+
+        ₹299
+
+      </div>
+
+      <p>
+        Professional business card design.
+      </p>
+
+      <a href="#contact" class="btn">
+        Order Now
+      </a>
+
+    </div>
+
+
+    <!-- CUSTOM -->
+    <div class="card price-card reveal">
+
+      <h3>✨ Custom Graphic Design</h3>
+
+      <div
+        class="price"
+        data-india="₹499+"
+        data-usa="$20+"
+        data-uk="£16+"
+        data-europe="€18+"
+        data-uae="AED 75+">
+
+        ₹499+
+
+      </div>
+
+      <p>
+        Custom designs based on your requirements.
+      </p>
+
+      <a href="#contact" class="btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+
+  <div class="section-head reveal">
+
+    <h2 class="title">
+      Portfolio
+    </h2>
+
+    <p class="subtitle">
+      Replace these demo cards with your actual designs.
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+    <div class="work reveal">
+      <span>🎨 BRAND IDENTITY</span>
+    </div>
+
+    <div class="work reveal">
+      <span>📱 SOCIAL MEDIA</span>
+    </div>
+
+    <div class="work reveal">
+      <span>📢 POSTER DESIGN</span>
+    </div>
+
+    <div class="work reveal">
+      <span>▶️ YOUTUBE THUMBNAIL</span>
+    </div>
+
+    <div class="work reveal">
+      <span>✦ TYPOGRAPHY</span>
+    </div>
+
+    <div class="work reveal">
+      <span>✨ CUSTOM DESIGN</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY GRAFYX -->
+<section id="about">
+
+  <div class="section-head reveal">
+
+    <h2 class="title">
+      Why GRAFYX?
+    </h2>
+
+    <p class="subtitle">
+      Creativity, quality and designs made around your vision.
+    </p>
+
+  </div>
+
+
+  <div class="stats">
+
+    <div class="stat reveal">
+      <strong>100%</strong>
+      <span>Creative Focus</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>6+</strong>
+      <span>Design Services</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>24/7</strong>
+      <span>Online Enquiries</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>∞</strong>
+      <span>Creative Ideas</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section>
+
+  <div class="section-head reveal">
+
+    <h2 class="title">
+      FAQ
+    </h2>
+
+    <p class="subtitle">
+      Frequently asked questions.
+    </p>
+
+  </div>
+
+
+  <div class="faq">
+
+    <details class="reveal">
+
+      <summary>
+        How can I order a design?
+      </summary>
+
+      <p>
+        Send your requirements through Instagram or WhatsApp.
+      </p>
+
+    </details>
+
+
+    <details class="reveal">
+
+      <summary>
+        Can I request custom designs?
+      </summary>
+
+      <p>
+        Yes. Custom Graphic Design starts from ₹499
+        in India and varies internationally.
+      </p>
+
+    </details>
+
+
+    <details class="reveal">
+
+      <summary>
+        Do you work with international clients?
+      </summary>
+
+      <p>
+        Yes. International pricing is available
+        in USD, GBP, EUR and AED.
+      </p>
+
+    </details>
+
+
+    <details class="reveal">
+
+      <summary>
+        Can I see previous work?
+      </summary>
+
+      <p>
+        Yes. Check our Portfolio section.
+      </p>
+
+    </details>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <div class="contact reveal">
+
+    <h2 class="title">
+      Have a Design in Mind?
+    </h2>
+
+    <p>
+      Tell us what you need and let's create
+      something unique for your brand.
+    </p>
+
+
+    <div class="contact-buttons">
 
       <a
         class="btn"
         href="https://instagram.com/grafyx.designs"
         target="_blank">
-        DM GRAFYX Designs →
+
+        📸 Instagram
+
+      </a>
+
+
+      <a
+        class="btn btn-outline"
+        href="https://wa.me/message/EOPBTIED7FL5H1"
+        target="_blank">
+
+        💬 WhatsApp
+
       </a>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <footer>
-    © 2026 GRAFYX Designs. All Rights Reserved.
-  </footer>
+<!-- FOOTER -->
+<footer>
+
+  © 2026 GRAFYX Designs.
+  All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+  document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+/* COUNTRY PRICING */
+
+function changeCountry(){
+
+  const country =
+    document.getElementById("country").value;
+
+  document
+    .querySelectorAll(".price")
+    .forEach(function(price){
+
+      price.textContent =
+        price.dataset[country];
+
+    });
+
+}
+
+
+/* SCROLL REVEAL */
+
+const observer =
+  new IntersectionObserver(
+
+    function(entries){
+
+      entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:0.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(function(element){
+
+    observer.observe(element);
+
+  });
+
+
+</script>
 
 </body>
 </html>
