@@ -6,7 +6,8 @@
 
 <title>GRAFYX Designs | Creative Graphic Design Studio</title>
 
-<meta name="description" content="GRAFYX Designs creates modern logos, social media graphics, posters, thumbnails and custom graphic designs.">
+<meta name="description"
+content="GRAFYX Designs creates modern logos, social media graphics, posters, thumbnails and custom graphic designs.">
 
 <style>
 *{
@@ -18,12 +19,10 @@
 
 :root{
   --bg:#070811;
-  --bg2:#0b0d18;
   --card:#101221;
-  --card2:#15182a;
   --text:#ffffff;
   --muted:#a5a8bd;
-  --border:#282c43;
+  --border:#292d43;
   --purple:#a855f7;
   --blue:#38bdf8;
   --gradient:linear-gradient(135deg,#a855f7,#38bdf8);
@@ -36,14 +35,13 @@ body{
   overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
 body::before{
   content:"";
   position:fixed;
   width:500px;
   height:500px;
-  top:-180px;
-  left:-180px;
+  top:-200px;
+  left:-200px;
   background:rgba(168,85,247,.14);
   filter:blur(110px);
   border-radius:50%;
@@ -66,6 +64,7 @@ body::after{
 }
 
 /* NAVBAR */
+
 nav{
   position:sticky;
   top:0;
@@ -74,7 +73,7 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(7,8,17,.78);
+  background:rgba(7,8,17,.8);
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(255,255,255,.07);
 }
@@ -93,8 +92,8 @@ nav{
 
 .nav-links{
   display:flex;
-  align-items:center;
   gap:25px;
+  align-items:center;
 }
 
 .nav-links a{
@@ -118,6 +117,7 @@ nav{
 }
 
 /* HERO */
+
 .hero{
   min-height:90vh;
   padding:90px 7%;
@@ -135,7 +135,6 @@ nav{
   color:#d7d2ff;
   font-size:11px;
   letter-spacing:1.5px;
-  background:rgba(255,255,255,.025);
 }
 
 h1{
@@ -169,11 +168,13 @@ h1{
   background:var(--gradient);
   box-shadow:0 10px 35px rgba(120,80,255,.18);
   transition:.3s;
+  border:none;
+  cursor:pointer;
 }
 
 .btn:hover{
   transform:translateY(-4px);
-  box-shadow:0 15px 45px rgba(120,80,255,.35);
+  box-shadow:0 15px 45px rgba(120,80,255,.3);
 }
 
 .btn-outline{
@@ -182,6 +183,7 @@ h1{
 }
 
 /* HERO ART */
+
 .hero-art{
   height:390px;
   display:flex;
@@ -244,6 +246,7 @@ h1{
 }
 
 /* SECTIONS */
+
 section{
   padding:90px 7%;
 }
@@ -262,7 +265,8 @@ section{
   line-height:1.6;
 }
 
-/* GRID */
+/* CARDS */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -272,11 +276,9 @@ section{
 .card{
   padding:28px;
   border-radius:20px;
-  background:linear-gradient(145deg,rgba(18,20,39,.95),rgba(10,11,23,.95));
+  background:linear-gradient(145deg,#121427,#0b0d18);
   border:1px solid var(--border);
   transition:.35s;
-  position:relative;
-  overflow:hidden;
 }
 
 .card:hover{
@@ -301,10 +303,24 @@ section{
 }
 
 /* PRICING */
+
+.country-select{
+  width:100%;
+  max-width:380px;
+  padding:13px 15px;
+  margin-bottom:30px;
+  border-radius:12px;
+  border:1px solid #30344c;
+  background:#101221;
+  color:#fff;
+  font-size:15px;
+  outline:none;
+}
+
 .price-card{
   display:flex;
   flex-direction:column;
-  min-height:270px;
+  min-height:280px;
 }
 
 .price{
@@ -322,33 +338,20 @@ section{
   padding:11px;
 }
 
-.country-select{
-  width:100%;
-  max-width:380px;
-  padding:13px 15px;
-  margin-bottom:30px;
-  border-radius:12px;
-  border:1px solid #30344c;
-  background:#101221;
-  color:#fff;
-  font-size:15px;
-  outline:none;
-}
-
 /* PORTFOLIO */
+
 .work{
   height:230px;
   border-radius:20px;
   padding:25px;
   display:flex;
   align-items:flex-end;
-  position:relative;
-  overflow:hidden;
   border:1px solid var(--border);
   background:
     radial-gradient(circle at 20% 20%,rgba(168,85,247,.55),transparent 35%),
     linear-gradient(135deg,#19132d,#0d1d2b);
   transition:.35s;
+  overflow:hidden;
 }
 
 .work:hover{
@@ -361,7 +364,8 @@ section{
   font-weight:bold;
 }
 
-/* WHY */
+/* STATS */
+
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -390,7 +394,38 @@ section{
   font-size:13px;
 }
 
+/* POLICIES */
+
+.policy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.policy-card{
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:#0e101d;
+}
+
+.policy-card h3{
+  margin-bottom:15px;
+}
+
+.policy-card p,
+.policy-card li{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+.policy-card ul{
+  padding-left:20px;
+}
+
 /* FAQ */
+
 .faq{
   max-width:850px;
 }
@@ -415,6 +450,7 @@ details p{
 }
 
 /* CONTACT */
+
 .contact{
   text-align:center;
   padding:70px 25px;
@@ -440,6 +476,7 @@ details p{
 }
 
 /* FOOTER */
+
 footer{
   padding:30px 7%;
   border-top:1px solid #202334;
@@ -448,7 +485,8 @@ footer{
   font-size:13px;
 }
 
-/* REVEAL ANIMATION */
+/* ANIMATION */
+
 .reveal{
   opacity:0;
   transform:translateY(35px);
@@ -461,6 +499,7 @@ footer{
 }
 
 /* MOBILE */
+
 @media(max-width:800px){
 
   .nav-links{
@@ -516,6 +555,10 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .policy-grid{
+    grid-template-columns:1fr;
+  }
+
   .title{
     font-size:34px;
   }
@@ -546,6 +589,7 @@ footer{
 <body>
 
 <!-- NAVBAR -->
+
 <nav>
 
   <div class="logo">
@@ -555,17 +599,20 @@ footer{
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
   <div class="nav-links" id="navLinks">
+
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="#about">Why Us</a>
+    <a href="#policies">Policies</a>
     <a href="#contact">Contact</a>
+
   </div>
 
 </nav>
 
 
 <!-- HERO -->
+
 <section class="hero">
 
   <div class="reveal">
@@ -590,8 +637,8 @@ footer{
         View Portfolio →
       </a>
 
-      <a href="#contact" class="btn btn-outline">
-        Get a Quote
+      <a href="#pricing" class="btn btn-outline">
+        View Pricing
       </a>
 
     </div>
@@ -613,13 +660,12 @@ footer{
 
 
 <!-- SERVICES -->
+
 <section id="services">
 
   <div class="section-head reveal">
 
-    <h2 class="title">
-      Our Services
-    </h2>
+    <h2 class="title">Our Services</h2>
 
     <p class="subtitle">
       Everything you need to build a strong visual identity.
@@ -634,58 +680,47 @@ footer{
       <div class="icon">🎨</div>
       <h3>Logo Design</h3>
       <p>
-        Professional and memorable logos
-        designed for your brand.
+        Professional and memorable logos designed for your brand.
       </p>
     </div>
-
 
     <div class="card reveal">
       <div class="icon">📱</div>
       <h3>Social Media Design</h3>
       <p>
-        Modern posts, stories and creative
-        social media graphics.
+        Modern posts, stories and creative social media graphics.
       </p>
     </div>
-
 
     <div class="card reveal">
       <div class="icon">📢</div>
       <h3>Poster / Advertisement</h3>
       <p>
-        Eye-catching promotional posters
-        and advertisements.
+        Eye-catching promotional posters and advertisements.
       </p>
     </div>
-
 
     <div class="card reveal">
       <div class="icon">▶️</div>
       <h3>YouTube Thumbnail</h3>
       <p>
-        High-impact thumbnails designed
-        to grab attention.
+        High-impact thumbnails designed to grab attention.
       </p>
     </div>
-
 
     <div class="card reveal">
       <div class="icon">💳</div>
       <h3>Business Card</h3>
       <p>
-        Clean and professional business
-        card designs.
+        Clean and professional business card designs.
       </p>
     </div>
-
 
     <div class="card reveal">
       <div class="icon">✨</div>
       <h3>Custom Graphic Design</h3>
       <p>
-        Tell us your idea and we'll turn
-        it into a creative design.
+        Tell us your idea and we'll turn it into a creative design.
       </p>
     </div>
 
@@ -695,13 +730,12 @@ footer{
 
 
 <!-- PRICING -->
+
 <section id="pricing">
 
   <div class="section-head reveal">
 
-    <h2 class="title">
-      Pricing
-    </h2>
+    <h2 class="title">Pricing</h2>
 
     <p class="subtitle">
       Choose your country to see your local pricing.
@@ -715,25 +749,11 @@ footer{
     id="country"
     onchange="changeCountry()">
 
-    <option value="india">
-      🇮🇳 India — INR ₹
-    </option>
-
-    <option value="usa">
-      🇺🇸 USA — USD $
-    </option>
-
-    <option value="uk">
-      🇬🇧 UK — GBP £
-    </option>
-
-    <option value="europe">
-      🇪🇺 Europe — EUR €
-    </option>
-
-    <option value="uae">
-      🇦🇪 UAE — AED
-    </option>
+    <option value="india">🇮🇳 India — INR ₹</option>
+    <option value="usa">🇺🇸 USA — USD $</option>
+    <option value="uk">🇬🇧 UK — GBP £</option>
+    <option value="europe">🇪🇺 Europe — EUR €</option>
+    <option value="uae">🇦🇪 UAE — AED</option>
 
   </select>
 
@@ -742,12 +762,14 @@ footer{
 
 
     <!-- LOGO -->
+
     <div class="card price-card reveal">
 
       <h3>🎨 Logo Design</h3>
 
       <div
         class="price"
+        data-service="Logo Design"
         data-india="₹799"
         data-usa="$25"
         data-uk="£20"
@@ -762,20 +784,26 @@ footer{
         Professional logo for your brand.
       </p>
 
-      <a href="#contact" class="btn">
-        Order Now
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Order Now →
+
+      </button>
 
     </div>
 
 
     <!-- SOCIAL -->
+
     <div class="card price-card reveal">
 
       <h3>📱 Social Media Post</h3>
 
       <div
         class="price"
+        data-service="Social Media Post"
         data-india="₹249"
         data-usa="$12"
         data-uk="£10"
@@ -790,20 +818,26 @@ footer{
         Creative social media post design.
       </p>
 
-      <a href="#contact" class="btn">
-        Order Now
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Order Now →
+
+      </button>
 
     </div>
 
 
     <!-- POSTER -->
+
     <div class="card price-card reveal">
 
       <h3>📢 Poster / Advertisement</h3>
 
       <div
         class="price"
+        data-service="Poster / Advertisement"
         data-india="₹399"
         data-usa="$15"
         data-uk="£12"
@@ -818,20 +852,26 @@ footer{
         Promotional poster or advertisement.
       </p>
 
-      <a href="#contact" class="btn">
-        Order Now
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Order Now →
+
+      </button>
 
     </div>
 
 
     <!-- THUMBNAIL -->
+
     <div class="card price-card reveal">
 
       <h3>▶️ YouTube Thumbnail</h3>
 
       <div
         class="price"
+        data-service="YouTube Thumbnail"
         data-india="₹199"
         data-usa="$11"
         data-uk="£9"
@@ -846,20 +886,26 @@ footer{
         Attention-grabbing video thumbnail.
       </p>
 
-      <a href="#contact" class="btn">
-        Order Now
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Order Now →
+
+      </button>
 
     </div>
 
 
     <!-- BUSINESS CARD -->
+
     <div class="card price-card reveal">
 
       <h3>💳 Business Card</h3>
 
       <div
         class="price"
+        data-service="Business Card"
         data-india="₹299"
         data-usa="$12"
         data-uk="£10"
@@ -874,20 +920,26 @@ footer{
         Professional business card design.
       </p>
 
-      <a href="#contact" class="btn">
-        Order Now
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Order Now →
+
+      </button>
 
     </div>
 
 
     <!-- CUSTOM -->
+
     <div class="card price-card reveal">
 
       <h3>✨ Custom Graphic Design</h3>
 
       <div
         class="price"
+        data-service="Custom Graphic Design"
         data-india="₹499+"
         data-usa="$20+"
         data-uk="£16+"
@@ -902,9 +954,13 @@ footer{
         Custom designs based on your requirements.
       </p>
 
-      <a href="#contact" class="btn">
-        Get Quote
-      </a>
+      <button
+        class="btn order-btn"
+        onclick="orderService(this)">
+
+        Get Quote →
+
+      </button>
 
     </div>
 
@@ -914,16 +970,15 @@ footer{
 
 
 <!-- PORTFOLIO -->
+
 <section id="portfolio">
 
   <div class="section-head reveal">
 
-    <h2 class="title">
-      Portfolio
-    </h2>
+    <h2 class="title">Portfolio</h2>
 
     <p class="subtitle">
-      Replace these demo cards with your actual designs.
+      Your actual designs can be added here.
     </p>
 
   </div>
@@ -961,13 +1016,12 @@ footer{
 
 
 <!-- WHY GRAFYX -->
-<section id="about">
+
+<section>
 
   <div class="section-head reveal">
 
-    <h2 class="title">
-      Why GRAFYX?
-    </h2>
+    <h2 class="title">Why GRAFYX?</h2>
 
     <p class="subtitle">
       Creativity, quality and designs made around your vision.
@@ -1003,14 +1057,88 @@ footer{
 </section>
 
 
+<!-- POLICIES -->
+
+<section id="policies">
+
+  <div class="section-head reveal">
+
+    <h2 class="title">Policies</h2>
+
+    <p class="subtitle">
+      Please review our order, refund and revision policies before placing an order.
+    </p>
+
+  </div>
+
+
+  <div class="policy-grid">
+
+
+    <div class="policy-card reveal">
+
+      <h3>💳 Refund Policy</h3>
+
+      <p>
+        Custom design services require creative work to be prepared
+        specifically for the customer. Once custom design work has
+        started, payments are generally non-refundable.
+      </p>
+
+      <br>
+
+      <p>
+        If GRAFYX Designs is unable to fulfill an accepted order,
+        we will discuss an appropriate refund or alternative solution
+        with the customer.
+      </p>
+
+      <br>
+
+      <p>
+        Refund eligibility will always be considered according to
+        the specific order and applicable consumer laws.
+      </p>
+
+    </div>
+
+
+    <div class="policy-card reveal">
+
+      <h3>🔄 Revision Policy</h3>
+
+      <ul>
+
+        <li>Logo Design — 2 revisions</li>
+        <li>Social Media Post — 2 revisions</li>
+        <li>Poster / Advertisement — 2 revisions</li>
+        <li>YouTube Thumbnail — 2 revisions</li>
+        <li>Business Card — 2 revisions</li>
+        <li>Custom Design — according to project requirements</li>
+
+      </ul>
+
+      <br>
+
+      <p>
+        Additional revisions or major changes outside the original
+        requirements may be charged separately.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <!-- FAQ -->
+
 <section>
 
   <div class="section-head reveal">
 
-    <h2 class="title">
-      FAQ
-    </h2>
+    <h2 class="title">FAQ</h2>
 
     <p class="subtitle">
       Frequently asked questions.
@@ -1028,7 +1156,8 @@ footer{
       </summary>
 
       <p>
-        Send your requirements through Instagram or WhatsApp.
+        Select your service and click the Order Now button.
+        WhatsApp will open with a pre-filled order message.
       </p>
 
     </details>
@@ -1041,8 +1170,7 @@ footer{
       </summary>
 
       <p>
-        Yes. Custom Graphic Design starts from ₹499
-        in India and varies internationally.
+        Yes. Custom Graphic Design is available for unique requirements.
       </p>
 
     </details>
@@ -1055,8 +1183,7 @@ footer{
       </summary>
 
       <p>
-        Yes. International pricing is available
-        in USD, GBP, EUR and AED.
+        Yes. International pricing is available in USD, GBP, EUR and AED.
       </p>
 
     </details>
@@ -1065,11 +1192,26 @@ footer{
     <details class="reveal">
 
       <summary>
-        Can I see previous work?
+        When do you start the design?
       </summary>
 
       <p>
-        Yes. Check our Portfolio section.
+        After the requirements are confirmed and the agreed payment
+        process is completed.
+      </p>
+
+    </details>
+
+
+    <details class="reveal">
+
+      <summary>
+        Can I get revisions?
+      </summary>
+
+      <p>
+        Yes. Each service includes the revisions mentioned in our
+        Revision Policy.
       </p>
 
     </details>
@@ -1080,6 +1222,7 @@ footer{
 
 
 <!-- CONTACT -->
+
 <section id="contact">
 
   <div class="contact reveal">
@@ -1089,8 +1232,8 @@ footer{
     </h2>
 
     <p>
-      Tell us what you need and let's create
-      something unique for your brand.
+      Tell us what you need and let's create something unique
+      for your brand.
     </p>
 
 
@@ -1099,7 +1242,8 @@ footer{
       <a
         class="btn"
         href="https://instagram.com/grafyx.designs"
-        target="_blank">
+        target="_blank"
+        rel="noopener">
 
         📸 Instagram
 
@@ -1108,8 +1252,9 @@ footer{
 
       <a
         class="btn btn-outline"
-        href="https://wa.me/message/EOPBTIED7FL5H1"
-        target="_blank">
+        href="https://wa.me/916209442215"
+        target="_blank"
+        rel="noopener">
 
         💬 WhatsApp
 
@@ -1123,83 +1268,7 @@ footer{
 
 
 <!-- FOOTER -->
+
 <footer>
 
-  © 2026 GRAFYX Designs.
-  All Rights Reserved.
-
-</footer>
-
-
-<script>
-
-/* MOBILE MENU */
-
-function toggleMenu(){
-
-  document
-    .getElementById("navLinks")
-    .classList
-    .toggle("active");
-
-}
-
-
-/* COUNTRY PRICING */
-
-function changeCountry(){
-
-  const country =
-    document.getElementById("country").value;
-
-  document
-    .querySelectorAll(".price")
-    .forEach(function(price){
-
-      price.textContent =
-        price.dataset[country];
-
-    });
-
-}
-
-
-/* SCROLL REVEAL */
-
-const observer =
-  new IntersectionObserver(
-
-    function(entries){
-
-      entries.forEach(function(entry){
-
-        if(entry.isIntersecting){
-
-          entry.target.classList.add("show");
-
-        }
-
-      });
-
-    },
-
-    {
-      threshold:0.12
-    }
-
-  );
-
-
-document
-  .querySelectorAll(".reveal")
-  .forEach(function(element){
-
-    observer.observe(element);
-
-  });
-
-
-</script>
-
-</body>
-</html>
+  © 2026 GRAFYX Designs. All Rights
