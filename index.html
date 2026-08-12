@@ -1,7 +1,7 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +10,15 @@
 <meta name="description"
 content="GRAFYX Designs - Professional logo, social media, poster, thumbnail and custom graphic design services.">
 
+<!-- WEBSITE ICON -->
+<link rel="icon" type="image/jpeg" href="./logo.jpg">
+
 <style>
+
+/* ================================
+   RESET
+================================ */
+
 *{
   margin:0;
   padding:0;
@@ -18,11 +26,15 @@ content="GRAFYX Designs - Professional logo, social media, poster, thumbnail and
   scroll-behavior:smooth;
 }
 
+html{
+  scroll-padding-top:90px;
+}
+
 :root{
   --bg:#070811;
   --card:#101221;
   --card2:#0d0f1c;
-  --text:#fff;
+  --text:#ffffff;
   --muted:#a5a8bd;
   --border:#292d43;
   --purple:#a855f7;
@@ -30,16 +42,15 @@ content="GRAFYX Designs - Professional logo, social media, poster, thumbnail and
   --gradient:linear-gradient(135deg,#a855f7,#38bdf8);
 }
 
-html{
-  scroll-padding-top:80px;
-}
-
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
+  line-height:1.5;
 }
+
+/* BACKGROUND GLOW */
 
 body::before,
 body::after{
@@ -65,32 +76,75 @@ body::after{
   background:rgba(56,189,248,.10);
 }
 
-/* NAVBAR */
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  padding:18px 7%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:rgba(7,8,17,.92);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.logo{
-  font-size:21px;
-  font-weight:800;
-  letter-spacing:2px;
-}
+/* ================================
+   COMMON
+================================ */
 
 .gradient{
   background:var(--gradient);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
+}
+
+section{
+  padding:90px 7%;
+}
+
+.title{
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.section-head{
+  margin-bottom:40px;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  padding:18px 7%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:rgba(7,8,17,.94);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.nav-logo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  border-radius:8px;
 }
 
 .nav-links{
@@ -112,46 +166,63 @@ nav{
 
 .menu-btn{
   display:none;
+
   border:0;
   background:transparent;
+
   color:#fff;
-  font-size:26px;
+  font-size:28px;
+
   cursor:pointer;
 }
 
-/* HERO */
+/* ================================
+   HERO
+================================ */
 
 .hero{
   min-height:88vh;
+
   padding:90px 7%;
+
   display:grid;
   grid-template-columns:1.1fr .9fr;
+
   gap:55px;
   align-items:center;
 }
 
 .badge{
   display:inline-block;
+
   padding:9px 15px;
+
   border:1px solid #363a53;
   border-radius:30px;
+
   color:#d7d2ff;
+
   font-size:11px;
   letter-spacing:1.4px;
 }
 
 h1{
   font-size:clamp(48px,7vw,82px);
+
   line-height:.98;
   letter-spacing:-3px;
+
   margin:25px 0;
 }
 
 .hero-text{
   max-width:600px;
+
   color:var(--muted);
+
   font-size:18px;
   line-height:1.7;
+
   margin-bottom:30px;
 }
 
@@ -162,21 +233,34 @@ h1{
 }
 
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:50px;
+
   padding:14px 22px;
+
   border-radius:12px;
   border:1px solid transparent;
+
   text-decoration:none;
+
   color:#fff;
   font-weight:bold;
+
   background:var(--gradient);
+
   cursor:pointer;
+
   transition:.25s;
 }
 
 .btn:hover{
   transform:translateY(-3px);
-  box-shadow:0 12px 35px rgba(120,80,255,.25);
+
+  box-shadow:
+    0 12px 35px rgba(120,80,255,.25);
 }
 
 .btn-outline{
@@ -184,110 +268,147 @@ h1{
   border-color:#383c54;
 }
 
-/* HERO ART */
+/* ================================
+   HERO LOGO
+================================ */
 
 .hero-art{
   min-height:390px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   position:relative;
 }
 
 .orbit{
   position:absolute;
+
   width:310px;
   height:310px;
+
   border:1px solid rgba(168,85,247,.35);
+
   border-radius:50%;
+
   animation:spin 14s linear infinite;
 }
 
 .orbit::before{
   content:"";
+
   position:absolute;
+
   width:11px;
   height:11px;
+
   top:10px;
   left:50%;
+
   border-radius:50%;
+
   background:#38bdf8;
+
   box-shadow:0 0 25px #38bdf8;
 }
 
 .logo-box{
   width:230px;
   height:230px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:45px;
+
   background:
-    radial-gradient(circle at 30% 20%,#a855f7,transparent 45%),
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(168,85,247,.35),
+      transparent 45%
+    ),
     linear-gradient(145deg,#17152d,#0b1725);
+
   border:1px solid #3b3e58;
-  box-shadow:0 0 80px rgba(168,85,247,.22);
+
+  box-shadow:
+    0 0 80px rgba(168,85,247,.22);
+
   animation:float 4s ease-in-out infinite;
+
+  overflow:hidden;
 }
 
-.gx{
-  font-size:85px;
-  font-weight:900;
-  letter-spacing:-8px;
-  background:var(--gradient);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.hero-logo{
+  width:82%;
+  height:82%;
+
+  object-fit:contain;
+
+  display:block;
+
+  border-radius:25px;
 }
+
+/* ================================
+   ANIMATION
+================================ */
 
 @keyframes spin{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
 }
 
-/* SECTIONS */
-
-section{
-  padding:90px 7%;
-}
-
-.section-head{
-  margin-bottom:40px;
-}
-
-.title{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.subtitle{
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* CARDS */
+/* ================================
+   SERVICES
+================================ */
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
   gap:20px;
 }
 
 .card{
   padding:28px;
+
   border-radius:20px;
-  background:linear-gradient(145deg,#121427,#0b0d18);
+
+  background:
+    linear-gradient(
+      145deg,
+      #121427,
+      #0b0d18
+    );
+
   border:1px solid var(--border);
+
   transition:.3s;
 }
 
 .card:hover{
   transform:translateY(-6px);
+
   border-color:#4b506d;
 }
 
@@ -302,11 +423,15 @@ section{
 
 .card p{
   color:var(--muted);
+
   line-height:1.6;
+
   font-size:14px;
 }
 
-/* PRICING */
+/* ================================
+   PRICING
+================================ */
 
 .country-area{
   margin-bottom:30px;
@@ -314,21 +439,33 @@ section{
 
 .country-label{
   display:block;
+
   color:#c9cbd8;
+
   margin-bottom:9px;
+
   font-size:14px;
 }
 
 .country-select{
   width:100%;
   max-width:420px;
+
   padding:14px 15px;
+
   border-radius:12px;
+
   border:1px solid #30344c;
+
   background:#101221;
+
   color:#fff;
+
   font-size:15px;
+
   outline:none;
+
+  cursor:pointer;
 }
 
 .country-select:focus{
@@ -337,23 +474,30 @@ section{
 
 .detected{
   margin-top:10px;
+
   color:#8f93a9;
+
   font-size:13px;
 }
 
 .price-card{
   display:flex;
   flex-direction:column;
+
   min-height:300px;
 }
 
 .price{
   font-size:30px;
   font-weight:800;
+
   margin:18px 0;
+
   background:var(--gradient);
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 }
 
@@ -362,18 +506,34 @@ section{
   margin-top:auto;
 }
 
-/* PORTFOLIO */
+/* ================================
+   PORTFOLIO
+================================ */
 
 .work{
   height:230px;
+
   border-radius:20px;
+
   padding:25px;
+
   display:flex;
   align-items:flex-end;
+
   border:1px solid var(--border);
+
   background:
-    radial-gradient(circle at 20% 20%,rgba(168,85,247,.50),transparent 35%),
-    linear-gradient(135deg,#19132d,#0d1d2b);
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(168,85,247,.50),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #19132d,
+      #0d1d2b
+    );
+
   transition:.3s;
 }
 
@@ -386,29 +546,43 @@ section{
   font-weight:bold;
 }
 
-/* STATS */
+/* ================================
+   STATS
+================================ */
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
   gap:18px;
 }
 
 .stat{
   padding:28px 20px;
+
   text-align:center;
+
   background:var(--card2);
+
   border:1px solid var(--border);
+
   border-radius:18px;
 }
 
 .stat strong{
   display:block;
+
   font-size:30px;
+
   margin-bottom:8px;
+
   background:var(--gradient);
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 }
 
@@ -417,18 +591,26 @@ section{
   font-size:13px;
 }
 
-/* POLICIES */
+/* ================================
+   POLICIES
+================================ */
 
 .policy-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:20px;
 }
 
 .policy-card{
   padding:30px;
+
   border:1px solid var(--border);
+
   border-radius:20px;
+
   background:#0e101d;
 }
 
@@ -439,7 +621,9 @@ section{
 .policy-card p,
 .policy-card li{
   color:var(--muted);
+
   line-height:1.7;
+
   font-size:14px;
 }
 
@@ -447,7 +631,9 @@ section{
   padding-left:20px;
 }
 
-/* FAQ */
+/* ================================
+   FAQ
+================================ */
 
 .faq{
   max-width:850px;
@@ -455,9 +641,13 @@ section{
 
 details{
   background:#0e101d;
+
   border:1px solid var(--border);
+
   border-radius:14px;
+
   padding:18px 20px;
+
   margin-bottom:12px;
 }
 
@@ -468,62 +658,107 @@ summary{
 
 details p{
   color:var(--muted);
+
   line-height:1.6;
+
   margin-top:15px;
 }
 
-/* CONTACT */
+/* ================================
+   CONTACT
+================================ */
 
 .contact{
   text-align:center;
+
   padding:70px 25px;
+
   border-radius:28px;
+
   background:
-    radial-gradient(circle at 50% 0%,rgba(168,85,247,.25),transparent 45%),
-    linear-gradient(135deg,#121127,#0b1a27);
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(168,85,247,.25),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #121127,
+      #0b1a27
+    );
+
   border:1px solid #35384e;
 }
 
 .contact p{
   max-width:600px;
+
   margin:15px auto 28px;
+
   color:var(--muted);
+
   line-height:1.6;
 }
 
 .contact-buttons{
   display:flex;
+
   justify-content:center;
+
   gap:12px;
+
   flex-wrap:wrap;
 }
 
-/* FOOTER */
+/* ================================
+   FOOTER
+================================ */
 
 footer{
   padding:30px 7%;
+
   border-top:1px solid #202334;
+
   color:#777b90;
+
   text-align:center;
+
   font-size:13px;
 }
 
-/* MOBILE */
+/* ================================
+   MOBILE
+================================ */
 
 @media(max-width:800px){
 
+  nav{
+    padding:16px 6%;
+  }
+
   .nav-links{
     display:none;
+
     position:absolute;
+
     top:70px;
+
     left:5%;
     right:5%;
+
     padding:20px;
+
     flex-direction:column;
+
     align-items:flex-start;
+
     background:#0d0f1d;
+
     border:1px solid var(--border);
+
     border-radius:15px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
   }
 
   .nav-links.active{
@@ -536,7 +771,10 @@ footer{
 
   .hero{
     grid-template-columns:1fr;
+
     padding-top:65px;
+
+    min-height:auto;
   }
 
   .hero-art{
@@ -546,15 +784,13 @@ footer{
   .logo-box{
     width:190px;
     height:190px;
+
+    border-radius:35px;
   }
 
   .orbit{
     width:250px;
     height:250px;
-  }
-
-  .gx{
-    font-size:70px;
   }
 
   .grid{
@@ -576,9 +812,24 @@ footer{
   section{
     padding:70px 6%;
   }
+
 }
 
+/* ================================
+   SMALL MOBILE
+================================ */
+
 @media(max-width:450px){
+
+  .logo{
+    font-size:16px;
+    letter-spacing:1px;
+  }
+
+  .nav-logo{
+    width:30px;
+    height:30px;
+  }
 
   h1{
     font-size:48px;
@@ -591,42 +842,90 @@ footer{
   .buttons .btn,
   .contact-buttons .btn{
     width:100%;
-    text-align:center;
   }
+
+  .country-select{
+    max-width:100%;
+  }
+
 }
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+button,
+select,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+summary:focus-visible{
+  outline:2px solid #38bdf8;
+  outline-offset:3px;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- =========================================
+     NAVBAR
+========================================= -->
 
 <nav>
 
-  <div class="logo">
-    GRAFYX <span class="gradient">DESIGNS</span>
-  </div>
+  <a href="#" class="logo">
+
+    <img
+      src="./logo.jpg"
+      alt="GRAFYX Designs Logo"
+      class="nav-logo"
+    >
+
+    <span>
+      GRAFYX <span class="gradient">DESIGNS</span>
+    </span>
+
+  </a>
 
   <button
     class="menu-btn"
     type="button"
     onclick="toggleMenu()"
-    aria-label="Open menu">
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
     ☰
+
   </button>
 
   <div class="nav-links" id="navLinks">
+
     <a href="#services">Services</a>
+
     <a href="#pricing">Pricing</a>
+
     <a href="#portfolio">Portfolio</a>
+
     <a href="#policies">Policies</a>
+
+    <a href="#faq">FAQ</a>
+
     <a href="#contact">Contact</a>
+
   </div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero">
 
@@ -637,35 +936,57 @@ footer{
     </span>
 
     <h1>
+
       We Create.<br>
-      <span class="gradient">You Stand Out.</span>
+
+      <span class="gradient">
+        You Stand Out.
+      </span>
+
     </h1>
 
     <p class="hero-text">
+
       Modern, creative and professional graphic designs
       for brands, creators and businesses.
+
     </p>
 
     <div class="buttons">
 
-      <a href="#portfolio" class="btn">
+      <a
+        href="#portfolio"
+        class="btn">
+
         View Portfolio →
+
       </a>
 
-      <a href="#pricing" class="btn btn-outline">
+      <a
+        href="#pricing"
+        class="btn btn-outline">
+
         View Pricing
+
       </a>
 
     </div>
 
   </div>
 
+
   <div class="hero-art">
 
     <div class="orbit"></div>
 
     <div class="logo-box">
-      <div class="gx">GX</div>
+
+      <img
+        src="./logo.jpg"
+        alt="GRAFYX Designs"
+        class="hero-logo"
+      >
+
     </div>
 
   </div>
@@ -673,13 +994,17 @@ footer{
 </section>
 
 
-<!-- SERVICES -->
+<!-- =========================================
+     SERVICES
+========================================= -->
 
 <section id="services">
 
   <div class="section-head">
 
-    <h2 class="title">Our Services</h2>
+    <h2 class="title">
+      Our Services
+    </h2>
 
     <p class="subtitle">
       Everything you need to build a strong visual identity.
@@ -687,94 +1012,184 @@ footer{
 
   </div>
 
+
   <div class="grid">
 
+
     <div class="card">
-      <div class="icon">🎨</div>
-      <h3>Logo Design</h3>
+
+      <div class="icon">
+        🎨
+      </div>
+
+      <h3>
+        Logo Design
+      </h3>
+
       <p>
         Professional and memorable logos designed for your brand.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">📱</div>
-      <h3>Social Media Design</h3>
+
+      <div class="icon">
+        📱
+      </div>
+
+      <h3>
+        Social Media Design
+      </h3>
+
       <p>
         Modern posts, stories and creative social media graphics.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">📢</div>
-      <h3>Poster / Advertisement</h3>
+
+      <div class="icon">
+        📢
+      </div>
+
+      <h3>
+        Poster / Advertisement
+      </h3>
+
       <p>
         Eye-catching promotional posters and advertisements.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">▶️</div>
-      <h3>YouTube Thumbnail</h3>
+
+      <div class="icon">
+        ▶️
+      </div>
+
+      <h3>
+        YouTube Thumbnail
+      </h3>
+
       <p>
         High-impact thumbnails designed to grab attention.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">💳</div>
-      <h3>Business Card</h3>
+
+      <div class="icon">
+        💳
+      </div>
+
+      <h3>
+        Business Card
+      </h3>
+
       <p>
         Clean and professional business card designs.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="icon">✨</div>
-      <h3>Custom Graphic Design</h3>
+
+      <div class="icon">
+        ✨
+      </div>
+
+      <h3>
+        Custom Graphic Design
+      </h3>
+
       <p>
         Tell us your idea and we'll turn it into a creative design.
       </p>
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- PRICING -->
+<!-- =========================================
+     PRICING
+========================================= -->
 
 <section id="pricing">
 
   <div class="section-head">
 
-    <h2 class="title">Pricing</h2>
+    <h2 class="title">
+      Pricing
+    </h2>
 
     <p class="subtitle">
-      Prices automatically adapt to the visitor's country.
+      Select your country or let the website detect it automatically.
     </p>
 
   </div>
 
+
   <div class="country-area">
 
-    <label class="country-label" for="country">
+    <label
+      class="country-label"
+      for="country">
+
       Country / Currency
+
     </label>
 
-    <select class="country-select" id="country">
 
-      <option value="india">🇮🇳 India — INR ₹</option>
-      <option value="usa">🇺🇸 USA — USD $</option>
-      <option value="uk">🇬🇧 UK — GBP £</option>
-      <option value="europe">🇪🇺 Europe — EUR €</option>
-      <option value="uae">🇦🇪 UAE — AED</option>
-      <option value="usd">🌎 Other Country — USD $</option>
+    <select
+      class="country-select"
+      id="country">
+
+      <option value="india">
+        🇮🇳 India — INR ₹
+      </option>
+
+      <option value="usa">
+        🇺🇸 USA — USD $
+      </option>
+
+      <option value="uk">
+        🇬🇧 UK — GBP £
+      </option>
+
+      <option value="europe">
+        🇪🇺 Europe — EUR €
+      </option>
+
+      <option value="uae">
+        🇦🇪 UAE — AED
+      </option>
+
+      <option value="usd">
+        🌎 Other Country — USD $
+      </option>
 
     </select>
 
-    <div class="detected" id="detectedCountry">
+
+    <div
+      class="detected"
+      id="detectedCountry">
+
       Detecting your country...
+
     </div>
 
   </div>
@@ -782,11 +1197,14 @@ footer{
 
   <div class="grid">
 
+
     <!-- LOGO -->
 
     <div class="card price-card">
 
-      <h3>🎨 Logo Design</h3>
+      <h3>
+        🎨 Logo Design
+      </h3>
 
       <div
         class="price"
@@ -797,15 +1215,22 @@ footer{
         data-europe="€23"
         data-uae="AED 90"
         data-usd="$25">
+
         ₹799
+
       </div>
 
       <p>
         Professional logo for your brand.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Order Now →
+
       </button>
 
     </div>
@@ -815,7 +1240,9 @@ footer{
 
     <div class="card price-card">
 
-      <h3>📱 Social Media Post</h3>
+      <h3>
+        📱 Social Media Post
+      </h3>
 
       <div
         class="price"
@@ -826,15 +1253,22 @@ footer{
         data-europe="€11"
         data-uae="AED 45"
         data-usd="$12">
+
         ₹249
+
       </div>
 
       <p>
         Creative social media post design.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Order Now →
+
       </button>
 
     </div>
@@ -844,7 +1278,9 @@ footer{
 
     <div class="card price-card">
 
-      <h3>📢 Poster / Advertisement</h3>
+      <h3>
+        📢 Poster / Advertisement
+      </h3>
 
       <div
         class="price"
@@ -855,15 +1291,22 @@ footer{
         data-europe="€14"
         data-uae="AED 55"
         data-usd="$15">
+
         ₹399
+
       </div>
 
       <p>
         Promotional poster or advertisement.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Order Now →
+
       </button>
 
     </div>
@@ -873,7 +1316,9 @@ footer{
 
     <div class="card price-card">
 
-      <h3>▶️ YouTube Thumbnail</h3>
+      <h3>
+        ▶️ YouTube Thumbnail
+      </h3>
 
       <div
         class="price"
@@ -884,15 +1329,22 @@ footer{
         data-europe="€10"
         data-uae="AED 40"
         data-usd="$11">
+
         ₹199
+
       </div>
 
       <p>
         Attention-grabbing video thumbnail.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Order Now →
+
       </button>
 
     </div>
@@ -902,7 +1354,9 @@ footer{
 
     <div class="card price-card">
 
-      <h3>💳 Business Card</h3>
+      <h3>
+        💳 Business Card
+      </h3>
 
       <div
         class="price"
@@ -913,15 +1367,22 @@ footer{
         data-europe="€11"
         data-uae="AED 45"
         data-usd="$12">
+
         ₹299
+
       </div>
 
       <p>
         Professional business card design.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Order Now →
+
       </button>
 
     </div>
@@ -931,7 +1392,9 @@ footer{
 
     <div class="card price-card">
 
-      <h3>✨ Custom Graphic Design</h3>
+      <h3>
+        ✨ Custom Graphic Design
+      </h3>
 
       <div
         class="price"
@@ -942,31 +1405,43 @@ footer{
         data-europe="€18+"
         data-uae="AED 75+"
         data-usd="$20+">
+
         ₹499+
+
       </div>
 
       <p>
         Custom designs based on your requirements.
       </p>
 
-      <button class="btn" type="button" onclick="orderService(this)">
+      <button
+        class="btn"
+        type="button"
+        onclick="orderService(this)">
+
         Get Quote →
+
       </button>
 
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- PORTFOLIO -->
+<!-- =========================================
+     PORTFOLIO
+========================================= -->
 
 <section id="portfolio">
 
   <div class="section-head">
 
-    <h2 class="title">Portfolio</h2>
+    <h2 class="title">
+      Portfolio
+    </h2>
 
     <p class="subtitle">
       Your actual design work can be added here.
@@ -974,44 +1449,56 @@ footer{
 
   </div>
 
+
   <div class="grid">
+
 
     <div class="work">
       <span>🎨 BRAND IDENTITY</span>
     </div>
 
+
     <div class="work">
       <span>📱 SOCIAL MEDIA</span>
     </div>
+
 
     <div class="work">
       <span>📢 POSTER DESIGN</span>
     </div>
 
+
     <div class="work">
       <span>▶️ YOUTUBE THUMBNAIL</span>
     </div>
+
 
     <div class="work">
       <span>✦ TYPOGRAPHY</span>
     </div>
 
+
     <div class="work">
       <span>✨ CUSTOM DESIGN</span>
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- WHY GRAFYX -->
+<!-- =========================================
+     WHY GRAFYX
+========================================= -->
 
 <section>
 
   <div class="section-head">
 
-    <h2 class="title">Why GRAFYX?</h2>
+    <h2 class="title">
+      Why GRAFYX?
+    </h2>
 
     <p class="subtitle">
       Creativity, quality and designs made around your vision.
@@ -1019,40 +1506,78 @@ footer{
 
   </div>
 
+
   <div class="stats">
 
-    <div class="stat">
-      <strong>100%</strong>
-      <span>Creative Focus</span>
-    </div>
 
     <div class="stat">
-      <strong>6+</strong>
-      <span>Design Services</span>
+
+      <strong>
+        100%
+      </strong>
+
+      <span>
+        Creative Focus
+      </span>
+
     </div>
 
-    <div class="stat">
-      <strong>24/7</strong>
-      <span>Online Enquiries</span>
-    </div>
 
     <div class="stat">
-      <strong>∞</strong>
-      <span>Creative Ideas</span>
+
+      <strong>
+        6+
+      </strong>
+
+      <span>
+        Design Services
+      </span>
+
     </div>
+
+
+    <div class="stat">
+
+      <strong>
+        24/7
+      </strong>
+
+      <span>
+        Online Enquiries
+      </span>
+
+    </div>
+
+
+    <div class="stat">
+
+      <strong>
+        ∞
+      </strong>
+
+      <span>
+        Creative Ideas
+      </span>
+
+    </div>
+
 
   </div>
 
 </section>
 
 
-<!-- POLICIES -->
+<!-- =========================================
+     POLICIES
+========================================= -->
 
 <section id="policies">
 
   <div class="section-head">
 
-    <h2 class="title">Policies</h2>
+    <h2 class="title">
+      Policies
+    </h2>
 
     <p class="subtitle">
       Please review our order, refund and revision policies.
@@ -1060,11 +1585,15 @@ footer{
 
   </div>
 
+
   <div class="policy-grid">
+
 
     <div class="policy-card">
 
-      <h3>💳 Refund Policy</h3>
+      <h3>
+        💳 Refund Policy
+      </h3>
 
       <p>
         Custom design services involve work created specifically
@@ -1088,17 +1617,39 @@ footer{
 
     </div>
 
+
     <div class="policy-card">
 
-      <h3>🔄 Revision Policy</h3>
+      <h3>
+        🔄 Revision Policy
+      </h3>
 
       <ul>
-        <li>Logo Design — 2 revisions</li>
-        <li>Social Media Post — 2 revisions</li>
-        <li>Poster / Advertisement — 2 revisions</li>
-        <li>YouTube Thumbnail — 2 revisions</li>
-        <li>Business Card — 2 revisions</li>
-        <li>Custom Design — based on project requirements</li>
+
+        <li>
+          Logo Design — 2 revisions
+        </li>
+
+        <li>
+          Social Media Post — 2 revisions
+        </li>
+
+        <li>
+          Poster / Advertisement — 2 revisions
+        </li>
+
+        <li>
+          YouTube Thumbnail — 2 revisions
+        </li>
+
+        <li>
+          Business Card — 2 revisions
+        </li>
+
+        <li>
+          Custom Design — based on project requirements
+        </li>
+
       </ul>
 
       <br>
@@ -1110,18 +1661,23 @@ footer{
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- FAQ -->
+<!-- =========================================
+     FAQ
+========================================= -->
 
-<section>
+<section id="faq">
 
   <div class="section-head">
 
-    <h2 class="title">FAQ</h2>
+    <h2 class="title">
+      FAQ
+    </h2>
 
     <p class="subtitle">
       Frequently asked questions.
@@ -1129,53 +1685,87 @@ footer{
 
   </div>
 
+
   <div class="faq">
 
+
     <details>
-      <summary>How can I order a design?</summary>
+
+      <summary>
+        How can I order a design?
+      </summary>
+
       <p>
         Select your country, choose a service and click Order Now.
         WhatsApp will open with your service, price and country
         already included in the message.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Can I request a custom design?</summary>
+
+      <summary>
+        Can I request a custom design?
+      </summary>
+
       <p>
         Yes. Choose Custom Graphic Design and send your requirements.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Do you work with international clients?</summary>
+
+      <summary>
+        Do you work with international clients?
+      </summary>
+
       <p>
         Yes. International clients can see prices in their supported
         local currency. Other countries automatically use USD.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Can I change my country?</summary>
+
+      <summary>
+        Can I change my country?
+      </summary>
+
       <p>
         Yes. Use the country selector in the Pricing section.
       </p>
+
     </details>
 
+
     <details>
-      <summary>How many revisions are included?</summary>
+
+      <summary>
+        How many revisions are included?
+      </summary>
+
       <p>
         The number of included revisions is listed in our
         Revision Policy.
       </p>
+
     </details>
+
 
   </div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================================
+     CONTACT
+========================================= -->
 
 <section id="contact">
 
@@ -1190,23 +1780,35 @@ footer{
       for your brand.
     </p>
 
+
     <div class="contact-buttons">
+
+
+      <!-- WHATSAPP -->
 
       <a
         class="btn"
         href="https://wa.me/916209442215"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
+
         💬 WhatsApp Us
+
       </a>
+
+
+      <!-- INSTAGRAM -->
 
       <a
         class="btn btn-outline"
-        href="https://www.instagram.com/"
+        href="https://www.instagram.com/grafyx.designs/"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
+
         📸 Instagram
+
       </a>
+
 
     </div>
 
@@ -1215,117 +1817,112 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
+
   © 2026 GRAFYX Designs. All rights reserved.
+
 </footer>
 
 
 <script>
 
-/* ======================
-
-<script>
-
 /* =========================================
-   GRAFYX DESIGNS — WEBSITE SETTINGS
+   SETTINGS
 ========================================= */
 
 const WHATSAPP_NUMBER = "916209442215";
 
 
 /* =========================================
-   COUNTRY CONFIGURATION
+   COUNTRY CONFIG
 ========================================= */
 
 const COUNTRY_CONFIG = {
 
-  india: {
-    name: "India",
-    currency: "INR",
-    symbol: "₹"
+  india:{
+    name:"India",
+    currency:"INR",
+    symbol:"₹"
   },
 
-  usa: {
-    name: "United States",
-    currency: "USD",
-    symbol: "$"
+  usa:{
+    name:"United States",
+    currency:"USD",
+    symbol:"$"
   },
 
-  uk: {
-    name: "United Kingdom",
-    currency: "GBP",
-    symbol: "£"
+  uk:{
+    name:"United Kingdom",
+    currency:"GBP",
+    symbol:"£"
   },
 
-  europe: {
-    name: "Europe",
-    currency: "EUR",
-    symbol: "€"
+  europe:{
+    name:"Europe",
+    currency:"EUR",
+    symbol:"€"
   },
 
-  uae: {
-    name: "United Arab Emirates",
-    currency: "AED",
-    symbol: "AED "
+  uae:{
+    name:"United Arab Emirates",
+    currency:"AED",
+    symbol:"AED "
   },
 
-  usd: {
-    name: "Other Country",
-    currency: "USD",
-    symbol: "$"
+  usd:{
+    name:"Other Country",
+    currency:"USD",
+    symbol:"$"
   }
 
 };
 
 
 /* =========================================
-   COUNTRY CODE → WEBSITE COUNTRY
+   COUNTRY CODE MAP
 ========================================= */
 
 const COUNTRY_MAP = {
 
-  /* India */
-  IN: "india",
+  IN:"india",
 
-  /* United States */
-  US: "usa",
+  US:"usa",
 
-  /* United Kingdom */
-  GB: "uk",
+  GB:"uk",
 
-  /* UAE */
-  AE: "uae",
+  AE:"uae",
 
-  /* Europe */
-  AT: "europe",
-  BE: "europe",
-  BG: "europe",
-  HR: "europe",
-  CY: "europe",
-  CZ: "europe",
-  DK: "europe",
-  EE: "europe",
-  FI: "europe",
-  FR: "europe",
-  DE: "europe",
-  GR: "europe",
-  HU: "europe",
-  IE: "europe",
-  IT: "europe",
-  LV: "europe",
-  LT: "europe",
-  LU: "europe",
-  MT: "europe",
-  NL: "europe",
-  PL: "europe",
-  PT: "europe",
-  RO: "europe",
-  SK: "europe",
-  SI: "europe",
-  ES: "europe",
-  SE: "europe"
+  AT:"europe",
+  BE:"europe",
+  BG:"europe",
+  HR:"europe",
+  CY:"europe",
+  CZ:"europe",
+  DK:"europe",
+  EE:"europe",
+  FI:"europe",
+  FR:"europe",
+  DE:"europe",
+  GR:"europe",
+  HU:"europe",
+  IE:"europe",
+  IT:"europe",
+  LV:"europe",
+  LT:"europe",
+  LU:"europe",
+  MT:"europe",
+  NL:"europe",
+  PL:"europe",
+  PT:"europe",
+  RO:"europe",
+  SK:"europe",
+  SI:"europe",
+  ES:"europe",
+  SE:"europe"
 
 };
 
@@ -1334,39 +1931,49 @@ const COUNTRY_MAP = {
    MOBILE MENU
 ========================================= */
 
-function toggleMenu() {
+function toggleMenu(){
 
   const navLinks =
     document.getElementById("navLinks");
 
-  if (!navLinks) return;
+  const menuButton =
+    document.querySelector(".menu-btn");
 
   navLinks.classList.toggle("active");
+
+  const isOpen =
+    navLinks.classList.contains("active");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
 
 }
 
 
 /* =========================================
-   CLOSE MOBILE MENU AFTER CLICK
+   CLOSE MENU AFTER CLICK
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", function() {
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
 
-  const links =
-    document.querySelectorAll(".nav-links a");
+  link.addEventListener("click",function(){
 
-  links.forEach(function(link) {
+    const navLinks =
+      document.getElementById("navLinks");
 
-    link.addEventListener("click", function() {
+    const menuButton =
+      document.querySelector(".menu-btn");
 
-      const navLinks =
-        document.getElementById("navLinks");
+    navLinks.classList.remove("active");
 
-      if (navLinks) {
-        navLinks.classList.remove("active");
-      }
-
-    });
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
   });
 
@@ -1374,28 +1981,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /* =========================================
-   UPDATE ALL PRICES
+   UPDATE PRICES
 ========================================= */
 
-function updatePrices(country) {
+function updatePrices(country){
 
   const prices =
     document.querySelectorAll(".price");
 
-  prices.forEach(function(priceElement) {
+  prices.forEach(function(price){
 
-    const selectedPrice =
-      priceElement.getAttribute(
+    const localPrice =
+      price.getAttribute(
         "data-" + country
       );
 
-    const fallbackPrice =
-      priceElement.getAttribute(
-        "data-usd"
-      );
+    const usdPrice =
+      price.getAttribute("data-usd");
 
-    priceElement.textContent =
-      selectedPrice || fallbackPrice || "Contact Us";
+    if(localPrice){
+
+      price.textContent =
+        localPrice;
+
+    }else{
+
+      price.textContent =
+        usdPrice || "";
+
+    }
 
   });
 
@@ -1403,17 +2017,15 @@ function updatePrices(country) {
 
 
 /* =========================================
-   UPDATE COUNTRY INFORMATION
+   UPDATE COUNTRY TEXT
 ========================================= */
 
-function updateDetectedText(country) {
+function updateDetectedText(country){
 
   const detected =
     document.getElementById(
       "detectedCountry"
     );
-
-  if (!detected) return;
 
   const config =
     COUNTRY_CONFIG[country]
@@ -1432,86 +2044,47 @@ function updateDetectedText(country) {
 
 
 /* =========================================
-   APPLY COUNTRY
+   MANUAL COUNTRY CHANGE
 ========================================= */
 
-function applyCountry(country) {
+document
+.getElementById("country")
+.addEventListener(
+  "change",
+  function(){
 
-  const selector =
-    document.getElementById("country");
+    const country =
+      this.value;
 
-  /*
-    If country doesn't exist,
-    use USD.
-  */
+    updatePrices(country);
 
-  if (!COUNTRY_CONFIG[country]) {
-    country = "usd";
+    updateDetectedText(country);
+
   }
-
-  if (selector) {
-    selector.value = country;
-  }
-
-  updatePrices(country);
-  updateDetectedText(country);
-
-}
-
-
-/* =========================================
-   MANUAL COUNTRY SELECTION
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function() {
-
-  const selector =
-    document.getElementById("country");
-
-  if (!selector) return;
-
-  selector.addEventListener(
-    "change",
-    function() {
-
-      const country =
-        this.value;
-
-      applyCountry(country);
-
-    }
-  );
-
-});
+);
 
 
 /* =========================================
    AUTO COUNTRY DETECTION
 ========================================= */
 
-async function detectCountry() {
+async function detectCountry(){
 
   const selector =
     document.getElementById("country");
 
-  try {
-
-    /*
-      Detect visitor country
-      using IP location.
-    */
+  try{
 
     const response =
       await fetch(
         "https://ipapi.co/json/",
         {
-          method: "GET",
-          cache: "no-store"
+          method:"GET",
+          cache:"no-store"
         }
       );
 
-
-    if (!response.ok) {
+    if(!response.ok){
 
       throw new Error(
         "Country detection failed"
@@ -1519,62 +2092,44 @@ async function detectCountry() {
 
     }
 
-
     const data =
       await response.json();
 
-
-    const countryCode =
+    const code =
       String(
         data.country_code || ""
       ).toUpperCase();
 
+    const country =
+      COUNTRY_MAP[code] || "usd";
+
+    selector.value =
+      country;
+
+    updatePrices(country);
+
+    updateDetectedText(country);
+
+  }
+
+  catch(error){
 
     /*
-      Convert country code
-      to our pricing country.
+      If automatic detection
+      fails, India remains default.
     */
 
-    const detectedCountry =
-      COUNTRY_MAP[countryCode]
-      || "usd";
+    selector.value =
+      "india";
 
+    updatePrices("india");
 
-    /*
-      Apply detected country.
-    */
-
-    applyCountry(
-      detectedCountry
-    );
-
-
-    /*
-      Optional console information.
-    */
+    updateDetectedText("india");
 
     console.log(
-      "Detected country:",
-      countryCode,
-      "→",
-      detectedCountry
-    );
-
-
-  } catch (error) {
-
-    /*
-      If detection doesn't work,
-      India remains the default.
-    */
-
-    console.log(
-      "Automatic country detection failed:",
+      "Automatic country detection unavailable:",
       error
     );
-
-
-    applyCountry("india");
 
   }
 
@@ -1585,27 +2140,26 @@ async function detectCountry() {
    WHATSAPP ORDER
 ========================================= */
 
-function orderService(button) {
-
-  /*
-    Find the price card
-    containing the clicked button.
-  */
+function orderService(button){
 
   const card =
     button.closest(".price-card");
 
-  if (!card) return;
+  if(!card){
 
+    return;
 
-  /*
-    Get service information.
-  */
+  }
+
 
   const priceElement =
     card.querySelector(".price");
 
-  if (!priceElement) return;
+  if(!priceElement){
+
+    return;
+
+  }
 
 
   const service =
@@ -1614,40 +2168,24 @@ function orderService(button) {
     );
 
 
-  /*
-    Get currently displayed price.
-  */
-
   const price =
     priceElement.textContent.trim();
 
 
-  /*
-    Get selected country.
-  */
-
   const selector =
-    document.getElementById("country");
+    document.getElementById(
+      "country"
+    );
 
 
   const countryKey =
-    selector
-      ? selector.value
-      : "india";
+    selector.value;
 
-
-  /*
-    Get country configuration.
-  */
 
   const config =
     COUNTRY_CONFIG[countryKey]
     || COUNTRY_CONFIG.usd;
 
-
-  /*
-    Create WhatsApp message.
-  */
 
   const message =
 `🛒 NEW ORDER — GRAFYX DESIGNS
@@ -1664,10 +2202,6 @@ Please confirm my order and let me know the next steps.
 Thank you!`;
 
 
-  /*
-    Create WhatsApp URL.
-  */
-
   const whatsappURL =
     "https://wa.me/" +
     WHATSAPP_NUMBER +
@@ -1676,34 +2210,38 @@ Thank you!`;
 
 
   /*
-    Open WhatsApp.
+    Open WhatsApp in a new tab.
+    Works on desktop and mobile.
   */
 
-  window.location.href =
-    whatsappURL;
+  window.open(
+    whatsappURL,
+    "_blank",
+    "noopener,noreferrer"
+  );
 
 }
 
 
 /* =========================================
-   START WEBSITE
+   INITIALIZE WEBSITE
 ========================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
-  function() {
+  function(){
 
     /*
-      First show India pricing
-      immediately.
+      Default = India
     */
 
-    applyCountry("india");
+    updatePrices("india");
+
+    updateDetectedText("india");
 
 
     /*
-      Then try automatic
-      country detection.
+      Try automatic detection
     */
 
     detectCountry();
